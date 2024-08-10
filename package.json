@@ -1,0 +1,55 @@
+{
+	"name": "@wymjs/merge-env",
+	"version": "0.0.0",
+	"type": "module",
+	"description": "使用 Typescript 來編寫環境變量",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"readme.md"
+	],
+	"scripts": {
+		"test": "tsx ./test/index.ts",
+		"build": "tsup-node index.ts --platform node --format esm --dts --clean --external lodash-es, esbuild",
+		"publish-package": "pnpm run build && npm publish",
+		"lint": "eslint --fix --no-ignore --max-warnings=0",
+		"format": "prettier --cache --write",
+		"prepare": "husky install"
+	},
+	"homepage": "https://github.com/wymjs/merge-env",
+	"keywords": [
+		"wymjs",
+		"typescript",
+		"node",
+		"env"
+	],
+	"license": "ISC",
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,vue}": "pnpm run lint",
+		"*.{js,jsx,ts,tsx,vue,css,sass,scss,less}": "pnpm run format"
+	},
+	"devDependencies": {
+		"@types/lodash-es": "^4.17.12",
+		"@types/node": "^20.9.0",
+		"@typescript-eslint/eslint-plugin": "^7.1.1",
+		"@typescript-eslint/parser": "^7.1.1",
+		"eslint": "^8.57.0",
+		"eslint-plugin-unused-imports": "^3.0.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.1.0",
+		"prettier": "^3.1.0",
+		"esbuild": "^0.20.2",
+		"lodash-es": "^4.17.21",
+		"tsup": "^8.0.1",
+		"tsx": "^4.8.2",
+		"typescript": "^5.2.2"
+	},
+	"peerDependencies": {
+		"esbuild": ">=0",
+		"lodash-es": ">=4"
+	},
+	"engines": {
+		"node": "^14.18.0 || >=16.0.0"
+	}
+}
