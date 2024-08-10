@@ -1,6 +1,6 @@
 {
 	"name": "@wymjs/merge-env",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"description": "使用 Typescript 來編寫環境變量",
 	"main": "dist/index.js",
@@ -12,7 +12,7 @@
 	"scripts": {
 		"test": "tsx ./test/index.ts",
 		"build": "tsup-node index.ts --platform node --format esm --dts --clean --external lodash-es, esbuild",
-		"publish-package": "pnpm run build && npm publish",
+		"publish-package": "pnpm run build && npm publish --access public",
 		"lint": "eslint --fix --no-ignore --max-warnings=0",
 		"format": "prettier --cache --write",
 		"prepare": "husky install"
