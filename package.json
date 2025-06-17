@@ -1,8 +1,8 @@
 {
 	"name": "@wymjs/merge-env",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"type": "module",
-	"description": "使用 Typescript 來編寫環境變量",
+	"description": "使用 Typescript 來編寫環境變量 (新增 external 參數)",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [

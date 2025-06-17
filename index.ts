@@ -5,8 +5,9 @@ import esbuild from 'esbuild'
 import { URL } from 'node:url'
 
 type MergeEnvOptions = {
-	mode?: string // 環境變數
 	dirs: string[] // absolute path
+	mode?: string // 環境變數
+	external?: string[] // esbuild external
 }
 
 const SL = path.normalize('/')
@@ -91,7 +92,7 @@ export default envConfig`
 				loader: {
 					'.ts': 'ts',
 				},
-				external: ['lodash-es'],
+				external: ['lodash-es', ...(options.external || [])],
 			})
 
 			const jsImportPath = `./${OUT_FILENAME}`
